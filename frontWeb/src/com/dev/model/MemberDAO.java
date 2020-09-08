@@ -26,7 +26,7 @@ public class MemberDAO {
 	}
 	
 	//전체조회
-	public ArrayList<MemberVO> selectAll(MemberVO memberVO) {
+	public ArrayList<MemberVO> selectAll() {
 		MemberVO resultVO = null;
 		ResultSet rs = null; // 초기화
 		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
@@ -88,7 +88,7 @@ public class MemberDAO {
 	}
 	
 	//삭제
-	public void delete(MemberVO memberVO) {
+	public int delete(MemberVO memberVO) {
 		try {
 			conn = ConnectionManager.getConnnect();
 			String sql = "DELETE FROM MEMBER WHERE ID = ?";
@@ -103,10 +103,12 @@ public class MemberDAO {
 		} finally {
 			ConnectionManager.close(null, pstmt, conn);
 		}
-	}
+		return 0;
+	} 
 	
 	//수정
-	public void update(MemberVO memberVO) {
+	public int update(MemberVO memberVO) {
+		int r = 0;
 		try {
 			conn = ConnectionManager.getConnnect();
 			String sql = "UPDATE MEMBER SET PW = ?, JOb = ?, gender = ?, mailyn = ?, "
@@ -120,14 +122,15 @@ public class MemberDAO {
 			pstmt.setString(6, memberVO.getHobby());
 			pstmt.setString(7, memberVO.getId());
 			pstmt.executeUpdate(); //업데이트할때 괄호안에 안들어감
-			int r = pstmt.executeUpdate();
+			r = pstmt.executeUpdate();
 			System.out.println(r + " 건이 수정됨");
 			
 		} catch (Exception e){
 			e.printStackTrace();
 		} finally {
 			ConnectionManager.close(null, pstmt, conn);
-		}
+		} 
+		return r;
 	}
 	
 	//insert

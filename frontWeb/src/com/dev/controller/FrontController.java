@@ -26,6 +26,8 @@ public class FrontController extends HttpServlet {
 	HashMap<String, Controller> list = null;
 	
 	@Override
+	
+	//메모리 로딩1번만  - init()  uril <-> sub controller 매핑
 	public void init(ServletConfig config) throws ServletException {
 		charset = config.getInitParameter("charset");
 		list = new HashMap<String, Controller>();
@@ -40,7 +42,8 @@ public class FrontController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+	
+	//요청 들어올때 마다
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding(charset);
 		String uri = request.getRequestURI(); 		   		// frontWeb/memberInsert.do
