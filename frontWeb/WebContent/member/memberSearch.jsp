@@ -6,9 +6,12 @@
 <meta charset="UTF-8">
 <title>memberSearch.jsp</title>
 <script>
-	if('${errorCode}'==1){
+	/* if('${errorCode}'==1){
 		alert('${error}');
-		}
+		} */
+	fuction decoTest(){
+		console.log("test");
+	}
 </script>
 </head>
 <body>
