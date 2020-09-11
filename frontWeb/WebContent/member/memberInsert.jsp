@@ -54,7 +54,7 @@
 			</div>
 
 			<div>
-				<label for="pw">pwd</label> <input type="password" id="pw" name="password">
+				<label for="pw">pw</label> <input type="password" id="pw" name="password">
 			</div>
 
 			<div>

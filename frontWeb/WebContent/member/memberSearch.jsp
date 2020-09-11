@@ -9,7 +9,7 @@
 	/* if('${errorCode}'==1){
 		alert('${error}');
 		} */
-	fuction decoTest(){
+	function decoTest(){
 		console.log("test");
 	}
 </script>
@@ -22,6 +22,5 @@
 		id : <input name="id">
 		<button>검색</button>
 	</form>
-
 </body>
 </html>
