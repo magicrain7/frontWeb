@@ -1,4 +1,4 @@
-package com.dev.controller;
+package com.dev.controller.member;
 
 import java.io.IOException;
 
@@ -6,7 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dev.model.MemberDAO;
+import com.dev.common.Controller;
+import com.dev.dao.MemberDAO;
 import com.dev.model.MemberVO;
 
 public class MemberSearchController implements Controller {
@@ -34,6 +35,7 @@ public class MemberSearchController implements Controller {
 			request.getRequestDispatcher("/member/"+path).forward(request, response);
 			return;
 		}
+		
 		//vo에 담기
 		MemberVO member = new MemberVO();
 		member.setId(id);

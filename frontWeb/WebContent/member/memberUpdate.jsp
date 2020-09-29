@@ -11,7 +11,7 @@
 	$(function(){
 		//초기화
 		$("[name=gender]").val(["${member.gender}"]);
-		$("[name=hobby]").val("${member.hobby}".split(",")); //read, ski,
+		$("[name=hobby]").val("${member.hobby}".split(",")); 
 		$("[name=mailyn]").val(["${member.mailyn}"]);
 		$("#frm [name=job]").val("${member.job}");
 	});
@@ -70,7 +70,6 @@
 	</div>
 	<div>
 		<button type="reset">초기화</button>
-		<!-- <button type="button" onclick="inputCheck()">전송</button> -->
 		<button>등록</button>
 	</div>
 </form>
